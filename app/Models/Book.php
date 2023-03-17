@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    // L:11 is usually implicit, but has been written explicitly for this demo.
     protected $table = 'books';
+    // ↳ This code is normally implicit. When a new class is created, a $table variable is also created, then auto-assigned the lowercase/plural version of its class name.
+    
     protected $fillable = [
         'title',
         'author_id',
@@ -16,6 +17,7 @@ class Book extends Model
     ];
     public function author() {
         return $this->belongsTo(Author::class);
+        // return $this->belongsTo('App\Models\Author');
     }
     use HasFactory;
 }
