@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/alissaestelle/laravel_rest_api/blob/main/README.md">README</a>
+                    <a href="https://github.com/alissaestelle/laravel_rest_api/blob/main/README.md" target="_blank">README</a>
                     <a href="{{env('app_url')}}/api/authors/" target="_blank">Authors</a>
                     <a href="{{env('app_url')}}/api/books/" target="_blank">Books</a>
                     <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en" target="_blank">JSON Formatter</a>

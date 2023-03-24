@@ -7,18 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
-    // L:11 is usually implicit, but has been written explicitly for this demo.
-    protected $table = 'authors';
-    protected $fillable = [
-        'name',
-        'title',
-        'company',
-        'email'
-    ];
+  protected $table = 'authors';
+  // ↳ This code is normally implicit. When a new class is created, a $table variable is also created, then auto-assigned the lowercase/plural version of its class name.
 
-    public function books() {
-        return $this->hasMany(Book::class);
-        // return $this->hasMany('App\Models\Book');
-    }
-    use HasFactory;
+  protected $fillable = ['name', 'title', 'company', 'email'];
+
+  function books()
+  {
+    return $this->hasMany(Book::class);
+    // return $this->hasMany('App\Models\Book');
+  }
+  use HasFactory;
 }
