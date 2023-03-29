@@ -11,6 +11,7 @@ class Author extends Model
   // ↳ This code is normally implicit. When a new class is created, a $table variable is also created, then auto-assigned the lowercase/plural version of its class name.
 
   protected $fillable = ['name', 'title', 'company', 'email'];
+  // ↳ $fillable values can be mass-assigned, i.e. seeded simultaneously. Fillable fields can also be modified.
 
   function books()
   {
