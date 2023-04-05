@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Http\Resources\AuthorResource;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -10,7 +11,7 @@ class AuthorController extends Controller
   // Display a listing of the resource.
   function index()
   {
-    return response(Author::all(), 200);
+    return response(AuthorResource::collection(Author::all(), 200));
   }
 
   // Store a newly created resource in storage.
@@ -29,7 +30,7 @@ class AuthorController extends Controller
   // Display the specified resource.
   function show(Author $author)
   {
-    return response($author, 200);
+    return response(new AuthorResource($author), 200);
   }
 
   // Update the specified resource in storage.
