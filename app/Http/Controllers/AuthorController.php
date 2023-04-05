@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Http\Resources\AuthorResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AuthorController extends Controller
 {
@@ -17,14 +18,14 @@ class AuthorController extends Controller
   // Store a newly created resource in storage.
   function store(Request $request)
   {
-    $data = $request->validate([
+    $data = Validator::make($request->toArray(), [
       'name' => 'required',
       'title' => 'required',
       'company' => 'required',
       'email' => 'required',
     ]);
 
-    return response(Author::create($data), 201);
+    return response(new AuthorResource(Author::create($data->validate())), 201);
   }
 
   // Display the specified resource.
@@ -44,7 +45,7 @@ class AuthorController extends Controller
     ]);
 
     $author->update($data);
-    return response($author->update($data), 200);
+    return response(new AuthorResource($author->update($data)), 200);
   }
 
   // Remove the specified resource from storage.
