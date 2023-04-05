@@ -20,30 +20,49 @@ class AuthorControl extends Controller
    */
   function store(Request $request)
   {
-    $data = $request->validate([]);
+    $data = $request->validate([
+      'name' => 'required',
+      'title' => 'required',
+      'company' => 'required',
+      'email' => 'required',
+    ]);
+
+    return response(Author::create($data), 201);
   }
 
   /**
    * Display the specified resource.
    */
-  public function show(string $id)
+  function show(Author $author)
   {
-    //
+    return response($author, 200);
   }
 
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, string $id)
+  function update(Request $request, Author $author)
   {
-    //
+    $data = $request->validate([
+      'name' => 'required',
+      'title' => 'required',
+      'company' => 'required',
+      'email' => 'required',
+    ]);
+
+    $author->update($data);
+    return response($author->update($data), 200);
   }
 
   /**
    * Remove the specified resource from storage.
    */
-  public function destroy(string $id)
+  function destroy(Author $author)
   {
-    //
+    $deleteBooks = array_map(fn($book) => $book->delete(), $author->books);
+    $deleteBooks($author->books);
+
+    $author->delete();
+    return response('No Author Found', 204);
   }
 }
