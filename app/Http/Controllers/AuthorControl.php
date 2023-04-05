@@ -7,17 +7,13 @@ use Illuminate\Http\Request;
 
 class AuthorControl extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
+  // Display a listing of the resource.
   function index()
   {
     return response(Author::all(), 200);
   }
 
-  /**
-   * Store a newly created resource in storage.
-   */
+  // Store a newly created resource in storage.
   function store(Request $request)
   {
     $data = $request->validate([
@@ -30,17 +26,13 @@ class AuthorControl extends Controller
     return response(Author::create($data), 201);
   }
 
-  /**
-   * Display the specified resource.
-   */
+  // Display the specified resource.
   function show(Author $author)
   {
     return response($author, 200);
   }
 
-  /**
-   * Update the specified resource in storage.
-   */
+  // Update the specified resource in storage.
   function update(Request $request, Author $author)
   {
     $data = $request->validate([
@@ -54,9 +46,7 @@ class AuthorControl extends Controller
     return response($author->update($data), 200);
   }
 
-  /**
-   * Remove the specified resource from storage.
-   */
+  // Remove the specified resource from storage.
   function destroy(Author $author)
   {
     $deleteBooks = array_map(fn($book) => $book->delete(), $author->books);
