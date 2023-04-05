@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('authors', 'App\Http\Controllers\AuthorController@index');
-Route::get('books', 'App\Http\Controllers\BookController@index');
+Route::get('authors', 'AuthorController@index');
+Route::get('books', 'BookController@index');
