@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use Illuminate\Http\Request;
 
-class AuthorControl extends Controller
+class AuthorController extends Controller
 {
   // Display a listing of the resource.
   function index()

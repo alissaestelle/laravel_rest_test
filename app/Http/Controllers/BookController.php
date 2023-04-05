@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use Illuminate\HTTP\Request;
 
-class BookControl extends Controller
+class BookController extends Controller
 {
   // Display a listing of the resource.
   function index()
