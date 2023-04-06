@@ -24,5 +24,6 @@ Route::post('authors', 'AuthorController@store');
 
 Route::patch('authors/{author}', 'AuthorController@update');
 Route::put('authors/{author}', 'AuthorController@update');
+Route::delete('authors/{author}', 'AuthorController@destroy');
 
 Route::get('books', 'BookController@index');

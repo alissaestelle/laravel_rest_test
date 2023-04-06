@@ -17,7 +17,7 @@ class Book extends Model
 
   function author()
   {
-    return $this->belongsTo(Author::class);
+    return $this->belongsTo(Author::class, 'authorID');
     // return $this->belongsTo('App\Models\Author');
   }
   use HasFactory;

@@ -15,7 +15,7 @@ class Author extends Model
 
   function books()
   {
-    return $this->hasMany(Book::class);
+    return $this->hasMany(Book::class, 'authorID');
     // return $this->hasMany('App\Models\Book');
   }
   use HasFactory;

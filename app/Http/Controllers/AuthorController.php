@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Book;
 use App\Http\Resources\AuthorResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class AuthorController extends Controller
@@ -37,24 +39,24 @@ class AuthorController extends Controller
   // Update the specified resource in storage.
   function update(Request $request, Author $author)
   {
-    $data = $request->validate([
+    $data = Validator::make($request->toArray(), [
       'name' => 'required',
       'title' => 'required',
       'company' => 'required',
       'email' => 'required',
     ]);
 
-    $author->update($data);
-    return response(new AuthorResource($author->update($data)), 200);
+    $author->update($data->validate());
+    return response(new AuthorResource($author), 201);
   }
 
   // Remove the specified resource from storage.
   function destroy(Author $author)
   {
-    $deleteBooks = array_map(fn($book) => $book->delete(), $author->books);
-    $deleteBooks($author->books);
+    $bookList = $author->books;
+    $bookList->map(fn($book) => $book->delete());
 
     $author->delete();
-    return response('No Author Found', 204);
+    return response('No Content Found', 204);
   }
 }

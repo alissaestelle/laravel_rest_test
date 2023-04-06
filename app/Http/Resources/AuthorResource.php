@@ -17,12 +17,13 @@ class AuthorResource extends JsonResource
     {
         // return parent::toArray($request);
         $info = [
+            'id' => $this->id,
             'name' => $this->name,
             'title' => $this->title,
             'company' => $this->company,
             'email' => $this->email
         ];
-        
+
         return $info;
     }
 }
