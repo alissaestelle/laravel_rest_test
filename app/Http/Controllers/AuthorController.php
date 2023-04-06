@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
-use App\Models\Book;
 use App\Http\Resources\AuthorResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -57,6 +56,6 @@ class AuthorController extends Controller
     $bookList->map(fn($book) => $book->delete());
 
     $author->delete();
-    return response('No Content Found', 204);
+    return response('No Content', 204);
   }
 }
