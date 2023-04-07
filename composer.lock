@@ -4656,7 +4656,7 @@
       ],
       "description": "Provides an object-oriented API to generate and represent UIDs",
       "homepage": "https://symfony.com",
-      "keywords": ["UID", "ulid", "uuid"],
+      "keywords": ["uid", "ulid", "uuid"],
       "support": {
         "source": "https://github.com/symfony/uid/tree/v6.2.7"
       },

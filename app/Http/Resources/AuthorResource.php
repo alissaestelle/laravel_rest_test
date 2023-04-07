@@ -6,7 +6,7 @@ use Illuminate\HTTP\Request;
 use Illuminate\HTTP\Resources\JSON\JSONResource;
 use Illuminate\Support\Facades\Log;
 
-class AuthorResource extends JsonResource
+class AuthorResource extends JSONResource
 {
     /**
      * Transform the resource into an array.
