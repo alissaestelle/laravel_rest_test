@@ -5,7 +5,6 @@ namespace App\HTTP\Controllers;
 use App\Models\Author;
 use App\HTTP\Resources\AuthorResource;
 use Illuminate\HTTP\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class AuthorController extends Controller

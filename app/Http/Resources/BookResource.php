@@ -20,7 +20,7 @@ class BookResource extends JSONResource
             'id' => $this->id,
             'title' => $this->title,
             'authorID' => $this->authorID,
-            'author' => new AuthorResource($this->author->except(['title', 'email'])),
+            'author' => new AuthorResource($this->author),
         ];
     }
 }
