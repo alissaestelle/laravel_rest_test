@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\HTTP\Middleware;
 
-use Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance as Middleware;
+use Illuminate\Foundation\HTTP\Middleware\PreventRequestsDuringMaintenance as Middleware;
 
 class PreventRequestsDuringMaintenance extends Middleware
 {

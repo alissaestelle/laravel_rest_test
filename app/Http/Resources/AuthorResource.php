@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\HTTP\Resources;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\HTTP\Request;
+use Illuminate\HTTP\Resources\JSON\JSONResource;
 use Illuminate\Support\Facades\Log;
 
 class AuthorResource extends JsonResource

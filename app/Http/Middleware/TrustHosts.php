@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\HTTP\Middleware;
 
-use Illuminate\Http\Middleware\TrustHosts as Middleware;
+use Illuminate\HTTP\Middleware\TrustHosts as Middleware;
 
 class TrustHosts extends Middleware
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\HTTP\Middleware;
 
-use Illuminate\Http\Middleware\TrustProxies as Middleware;
-use Illuminate\Http\Request;
+use Illuminate\HTTP\Middleware\TrustProxies as Middleware;
+use Illuminate\HTTP\Request;
 
 class TrustProxies extends Middleware
 {
