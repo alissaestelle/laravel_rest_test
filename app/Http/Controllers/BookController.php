@@ -30,7 +30,7 @@ class BookController extends Controller
   // Display the specified resource.
   function show(Book $book)
   {
-    return response($book, 200);
+    return response(new BookResource($book), 200);
   }
 
   // Update the specified resource in storage.
