@@ -21,7 +21,8 @@ class AuthorResource extends JSONResource
             'name' => $this->name,
             'title' => $this->title,
             'company' => $this->company,
-            'email' => $this->email
+            'email' => $this->email,
+            'books' => BookResource::collection($this->books),
         ];
 
         return $info;
