@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5SSZ9V6');</script>
+        <!-- End Google Tag Manager -->
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -64,6 +72,11 @@
         </style>
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SSZ9V6"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -85,10 +98,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/alissaestelle/laravel_rest_api/blob/main/README.md" target="_blank">README</a>
-                    <a href="{{env('app_url')}}/api/authors/" target="_blank">Authors</a>
-                    <a href="{{env('app_url')}}/api/books/" target="_blank">Books</a>
-                    <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en" target="_blank">JSON Formatter</a>
+                    <a href="https://github.com/alissaestelle/laravel_rest_api/blob/main/README.md" id="read-me" target="_blank">README</a>
+                    <a href="{{env('app_url')}}/api/authors/" id="authors" target="_blank">Authors</a>
+                    <a href="{{env('app_url')}}/api/books/" id="books" target="_blank">Books</a>
+                    <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en" id="json-formatter" target="_blank">JSON Formatter</a>
                 </div>
             </div>
         </div>
